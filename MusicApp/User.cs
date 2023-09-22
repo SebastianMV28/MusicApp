@@ -9,16 +9,18 @@ namespace MusicApp
 {
     internal class User
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
-        public string FavoriteMusicGender { get; set; }
-        public NumberFormatInfo TelephoneNumber { get; set; }
-        public string Playlist { get; set; }
-        public string FavoriteArtists { get; set; }
-        public string FavoriteAlbums { get;  set; }
-        public string FavoriteTracks { get; set; }
+        private int _id;
+        private string _name, _email, _password, _telephoneNumber;
+        public int Id { get { return _id; } set { _id = value; } }
+        public string Name { get { return _name} set { _name = value; } }
+        public string Email { get { return _email; } set { _email = value; } }
+        public string Password { get { return _password; } set { _password = value; } }
+        public MusicGenre FavoriteMusicGender { get { return FavoriteMusicGender; } set { FavoriteMusicGender = value; } }
+        public string TelephoneNumber { get { return _telephoneNumber; } set { _telephoneNumber = value; } }
+        public Playlist Playlist { get { return Playlist; } set { Playlist = value; } }
+        public Artist FavoriteArtists { get { return FavoriteArtists; } set { FavoriteArtists = value; } }
+        public Album FavoriteAlbums { get { return FavoriteAlbums; }  set { FavoriteAlbums = value; } }
+        //public  FavoriteTracks { get; set; }
 
     }
 }
