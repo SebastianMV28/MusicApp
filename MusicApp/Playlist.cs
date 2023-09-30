@@ -8,17 +8,21 @@ namespace MusicApp
 {
     internal class Playlist
     {
-        private int _id, _numberOfTracks;
-
+        private int _id;
+        private Artist _relatedArtist;
         private string _playListName, _playListDescription;
+        private Track _track;
+        private Album _album;
 
         public int Id { get { return _id; } set { _id = value; } }
         public string PlayListName { get { return _playListName; } set { _playListName = value; } }
         public string PlayListDescription { get { return _playListDescription; } set { _playListDescription = value; } }
 
-        public Artist RelatedArtist { get { return RelatedArtist; } set { RelatedArtist = value; } }
-        public Album RelatedAlbum { get { return RelatedAlbum; } set { RelatedAlbum = value; } }
-        public int NumberOfTracks { get { return _numberOfTracks; } set { _numberOfTracks = value; } }
+        public Artist RelatedArtist { get { return _relatedArtist; } set { _relatedArtist = value; } }
+        public Album Album { get { return _album; } set { _album = value; } }
+
+        public Track Track { get => _track; set { _track = value; } }
+        
 
     }
 }
