@@ -10,12 +10,16 @@ namespace MusicApp
     {
         private int _id;
         private string _artistName, _country, _subGenre;
+        private MusicGenre _musicGenre;
+        private Album _album;
         public int Id { get { return _id; } set { _id = value; }}
         public string ArtistName { get { return _artistName; } set { _artistName = value; } }
 
-        public MusicGenre MusicGenre { get { return MusicGenre; } set { MusicGenre = value; } }
+        public MusicGenre MusicGenre { get { return _musicGenre; } set { _musicGenre = value; } }
 
         public string Country { get { return _country; } set { _country = value; } }
         public string subGenre { get { return _subGenre; } set { _subGenre = value; } }
+
+        internal Album Album { get => _album; set => _album = value; }
     }
 }

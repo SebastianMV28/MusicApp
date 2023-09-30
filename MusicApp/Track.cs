@@ -10,6 +10,20 @@ namespace MusicApp
     {
         private int _id;
         private string _title;
-        private string _duration;
+        private TimeOnly _duration;
+        private Artist _artist;
+        private Album _album;
+        private int _numberOfTrack;
+
+
+
+        public int Id { get => _id; set => _id = value; }
+        public string Title { get => _title; set => _title = value; }
+
+        public TimeOnly Duration { get => _duration; set => _duration = value; }
+        public Artist Artist { get => _artist; set => _artist = value; }
+        public Album Album { get => _album; set => _album = value; }
+
+        public int NumberOfTrack { get => _numberOfTrack;  set => _numberOfTrack = value; }
     }
 }

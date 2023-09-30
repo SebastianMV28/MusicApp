@@ -8,13 +8,16 @@ namespace MusicApp
 {
     internal class Album
     {
-        private string  _title, _description, _songTitle;
-        private int _numberOfSongs;
-        public Artist Artist{ get { return Artist; } set { Artist = value; } }
+        private string  _title, _description;
+        private Artist _artist;
+        private Track _trackTitle;
+        private Track _numberOfTrack;
+        private DateTime _releasedDate;
+        public Artist Artist{ get { return _artist; } set { _artist = value; } }
         public string Title { get { return _title; } set { _title = value; } }
         public string Description { get {return _description; } set { _description = value; } }
-        public DateTime ReleasedDate { get { return ReleasedDate; } set { ReleasedDate= value;} }
-        public int NumberOfSongs { get { return _numberOfSongs; } set { _numberOfSongs = value; } }
-        public string SongTitle { get { return _songTitle; } set { _songTitle = value; } }
+        public DateTime ReleasedDate { get { return _releasedDate; } set { _releasedDate= value;} }
+        public Track NumberOfTrack{ get { return _numberOfTrack; } set { _numberOfTrack = value; } }
+        public Track TrackTitle { get { return _trackTitle; } set { _trackTitle = value; } }
     }
 }

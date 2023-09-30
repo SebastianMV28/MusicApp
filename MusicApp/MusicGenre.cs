@@ -8,12 +8,16 @@ namespace MusicApp
 {
     internal class MusicGenre
     {
-        private int _id, _numberOfListeners, _numberOfArtists;
+        private int _id;
+        private Artist _relatedArtist;
         private string _genreName, _subGenreName;
+        private User _listener;
+        
         public int Id { get { return _id; } set { _id = value; } }
+        public Artist RelatedArtist {get => _relatedArtist; set=> _relatedArtist = value; }
         public string GenreName { get { return _genreName; } set { _genreName = value; } }
         public string SubGenreName { get { return _subGenreName; } set { _subGenreName = value; } }
-        public int NumberOfListeners { get { return _numberOfListeners; } set { _numberOfListeners = value; } }
-        public int NumberOfArtists { get { return _numberOfArtists; } set { _numberOfArtists = value; } }
+        public User Listener { get { return _listener; } set { _listener= value; } }
+    
         }
 }
