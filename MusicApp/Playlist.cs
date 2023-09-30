@@ -22,7 +22,23 @@ namespace MusicApp
         public Album Album { get { return _album; } set { _album = value; } }
 
         public Track Track { get => _track; set { _track = value; } }
-        
+
+
+
+
+        public Playlist(string playListName, string playListDescription)
+        {
+            _playListName = playListName;
+            _playListDescription = playListDescription;
+
+        }
+
+        public Playlist(Track track, Artist relatedArtist, Album album) 
+        {
+            _track = track;
+            _relatedArtist = relatedArtist;
+            _album = album;
+        }
 
     }
 }

@@ -21,5 +21,15 @@ namespace MusicApp
         public string subGenre { get { return _subGenre; } set { _subGenre = value; } }
 
         internal Album Album { get => _album; set => _album = value; }
+
+
+        public Artist(string artistName, MusicGenre musicGenre, string subGenre, string country)
+        {
+            _artistName = artistName;
+            _musicGenre = musicGenre;
+            _subGenre = subGenre;
+            _country = country;
+
+        }
     }
 }

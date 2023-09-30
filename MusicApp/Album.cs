@@ -19,5 +19,17 @@ namespace MusicApp
         public DateTime ReleasedDate { get { return _releasedDate; } set { _releasedDate= value;} }
         public Track NumberOfTrack{ get { return _numberOfTrack; } set { _numberOfTrack = value; } }
         public Track TrackTitle { get { return _trackTitle; } set { _trackTitle = value; } }
+
+
+
+
+        public Album( string title, Artist artist, Track trackTitle, Track numberOfTrack, DateTime releasedDate )
+        {
+            _title = title;
+            _artist = artist;
+            _trackTitle = trackTitle;
+            _numberOfTrack = numberOfTrack;
+            _releasedDate = releasedDate;
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -26,5 +27,26 @@ namespace MusicApp
         public Album FavoriteAlbum { get { return _favoriteAlbum; }  set { _favoriteAlbum= value; } }
       
 
+
+        public User(string name,string email, string password, string telephoneNumber )
+        {
+            _name = name;
+            _email = email;
+            _password = password;
+            _telephoneNumber = telephoneNumber ;
+        }
+
+        public User(Artist favoriteArtist, Album favoriteAlbum, MusicGenre favoriteMusicGenre) 
+        {
+            _favoriteAlbum = favoriteAlbum;
+            _favoriteArtist = favoriteArtist;
+            _favoriteMusicGenre = favoriteMusicGenre;
+        }
+
+        public User(string email, string password)
+        {
+            _email = email;
+            _password = password;
+        }
     }
 }

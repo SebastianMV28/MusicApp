@@ -23,5 +23,19 @@ namespace MusicApp
         public Artist Artist { get => _artist; set => _artist = value; }
         public Album Album { get => _album; set => _album = value; }
         public int NumberOfTrack { get => _numberOfTrack;  set => _numberOfTrack = value; }
+
+
+
+        public Track(string title, int numberOfTrack, TimeOnly duration ) 
+        {
+            _title = title;
+            _numberOfTrack = numberOfTrack;
+            _duration = duration;
+        }
+        public Track(Artist artist, Album album) 
+        {
+            _artist = artist;
+            _album = album;
+        }
     }
 }

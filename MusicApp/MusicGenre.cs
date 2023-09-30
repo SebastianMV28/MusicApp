@@ -18,6 +18,19 @@ namespace MusicApp
         public string GenreName { get { return _genreName; } set { _genreName = value; } }
         public string SubGenreName { get { return _subGenreName; } set { _subGenreName = value; } }
         public User Listener { get { return _listener; } set { _listener= value; } }
+
+        
+        public MusicGenre (string genreName,  string subGenreName)
+        {
+            _genreName= genreName;
+            _subGenreName= subGenreName;
+        }
+
+
+        public MusicGenre (Artist relatedArtist )
+        {
+            _relatedArtist = relatedArtist;
+        }
     
         }
 }
