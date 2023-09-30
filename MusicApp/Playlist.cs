@@ -17,7 +17,6 @@ namespace MusicApp
         public string PlayListDescription { get { return _playListDescription; } set { _playListDescription = value; } }
 
         public Artist RelatedArtist { get { return RelatedArtist; } set { RelatedArtist = value; } }
-
         public Album RelatedAlbum { get { return RelatedAlbum; } set { RelatedAlbum = value; } }
         public int NumberOfTracks { get { return _numberOfTracks; } set { _numberOfTracks = value; } }
 
