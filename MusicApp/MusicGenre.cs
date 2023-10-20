@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Intrinsics.X86;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,6 +20,44 @@ namespace MusicApp
         public string SubGenreName { get { return _subGenreName; } set { _subGenreName = value; } }
         public User Listener { get { return _listener; } set { _listener= value; } }
 
+        public enum MusicType
+        {
+            Pop= 0,
+            Rock=1,
+            Folk=2,
+            Blues=3,
+            Country=4,
+            Jazz=5,
+            Soul=6,
+            EDM=7,
+            Fuck=8,
+            Reggae=9,
+            Disco=10,
+            PunkRock=11,
+            Classical=12,
+            House= 13,
+            Techno=14,
+            IndieRock=15,
+            Grunge=16,
+            Ambient=17,
+            Gospel=18,
+            Grime= 19,
+            Trap=20,
+            HeavyMetal =21,
+            SpeedMetal=22,
+            ThrashMetal=23,
+            DeathMetal=24,
+            BlackMetal=25,
+            Grindcore=26,
+            Hardcore=27,
+            HardcorePunk=28,
+
+
+            
+
+
+
+        }
         
         public MusicGenre (string genreName,  string subGenreName)
         {

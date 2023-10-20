@@ -48,5 +48,11 @@ namespace MusicApp
             _email = email;
             _password = password;
         }
+
+        public enum UserType
+        {
+            User= 1,
+            Artist=2
+        }
     }
 }

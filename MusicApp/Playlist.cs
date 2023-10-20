@@ -25,7 +25,6 @@ namespace MusicApp
 
 
 
-
         public Playlist(string playListName, string playListDescription)
         {
             _playListName = playListName;
