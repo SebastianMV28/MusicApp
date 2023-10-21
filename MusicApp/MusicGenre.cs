@@ -51,9 +51,9 @@ namespace MusicApp
             Grindcore=26,
             Hardcore=27,
             HardcorePunk=28,
-
-
-            
+            Cumbia=29,
+            Tropical=30,
+            Salsa=31,
 
 
 

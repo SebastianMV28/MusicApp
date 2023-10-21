@@ -8,32 +8,31 @@ using System.Threading.Tasks;
 
 namespace MusicApp
 {
-    internal class User
+    public class User: UserEntity
     {
-        private int _id;
-        private string _name, _email, _password, _telephoneNumber;
+
+        public UserEntity _name;
+        public UserEntity _email;
+        public UserEntity _password;
+        public UserEntity _telephone;
         private Playlist _playlist;
         private Artist _favoriteArtist;
         private Album _favoriteAlbum;
         private MusicGenre _favoriteMusicGenre;
-        public int Id { get { return _id; } set { _id = value; } }
-        public string Name { get { return _name} set { _name = value; } }
-        public string Email { get { return _email; } set { _email = value; } }
-        public string Password { get { return _password; } set { _password = value; } }
-        public string TelephoneNumber { get { return _telephoneNumber; } set { _telephoneNumber = value; } }
+        private UserType _type;
+        
         public MusicGenre FavoriteMusicGender { get { return _favoriteMusicGenre; } set { _favoriteMusicGenre = value; } }
         public Playlist Playlist { get { return _playlist; } set { _playlist = value; } }
         public Artist FavoriteArtist { get { return _favoriteArtist; } set { _favoriteArtist= value; } }
         public Album FavoriteAlbum { get { return _favoriteAlbum; }  set { _favoriteAlbum= value; } }
-      
 
+        public UserType Type { get => _type; set => _type = value; }
 
-        public User(string name,string email, string password, string telephoneNumber )
+        public User(string name, string email, string password, string telephoneNumber, UserType type) : base(name, email, password, telephoneNumber)
+
         {
-            _name = name;
-            _email = email;
-            _password = password;
-            _telephoneNumber = telephoneNumber ;
+            type = _type;
+
         }
 
         public User(Artist favoriteArtist, Album favoriteAlbum, MusicGenre favoriteMusicGenre) 
@@ -43,16 +42,12 @@ namespace MusicApp
             _favoriteMusicGenre = favoriteMusicGenre;
         }
 
-        public User(string email, string password)
+        public User(UserEntity email, UserEntity password)
         {
             _email = email;
             _password = password;
         }
 
-        public enum UserType
-        {
-            User= 1,
-            Artist=2
-        }
+        
     }
 }
