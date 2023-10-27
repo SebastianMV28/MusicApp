@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MusicApp
 {
-    internal class Artist
+    internal class Artist:UserEntity
     {
         private int _id;
         private string _artistName, _country, _subGenre;
@@ -30,6 +30,11 @@ namespace MusicApp
             _subGenre = subGenre;
             _country = country;
 
+        }
+
+        public Artist(string name, string email, string password, string telephoneNumber, UserType type) : base(name, email, password, telephoneNumber) 
+        { 
+            type = _type;
         }
     }
 }
