@@ -6,8 +6,19 @@ using System.Threading.Tasks;
 
 namespace MusicApp.Data
 {
-    internal class AlbumDataManager
+    public static class AlbumDataManager
     {
+        private const string DATA_FILE = "C:\\Users\\USUARIO\\source\\repos\\MusicApp\\MusicApp\\Data";
+
+        public static Album AddAlbum(Album album)
+        {
+            return album;
+        }
+
+        private static string GetFileInfo()
+        {
+            return File.ReadAllText(DATA_FILE);
+        }
 
         public static void SaveAlbum(Album album)
         {
