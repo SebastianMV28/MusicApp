@@ -5,10 +5,30 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace MusicApp.Data
-{
-    internal class AlbumDataManager
-    {
 
+    
+{
+    public static class AlbumDataManager
+    {
+        private const string DATA_FILE = "C:\\Users\\Usuario\\source\\repos\\SebastianMV28\\MusicApp\\MusicApp\\Data";
+
+        public static Album AddAlbum(Album album)
+        {
+            try
+            {
+                string currentAlbum = GetFileInfo();
+                int[] array = new int[10];
+                array[0] = album.Id;
+
+            }
+            catch (IndexOutOfRangeException ex) {
+                Console.ForegroundColor= char.MinValue;
+            }
+        };
+
+        private static GetFileInfo() {
+            return DATA_FILE 
+        };
         public static void SaveAlbum(Album album)
         {
             Console.WriteLine(album.Title);
