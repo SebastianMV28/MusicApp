@@ -23,7 +23,6 @@ namespace MusicApp
 
         public MusicGenre MusicGenreSelection { get { return _musicGenre; } set { _musicGenre = value; } }
 
-
         public Album( string title, Artist artist, Track trackTitle, Track numberOfTrack, DateTime releasedDate )
         {
             _title = title;
