@@ -8,7 +8,7 @@ namespace MusicApp.Data
 {
     public static class AlbumDataManager
     {
-        private const string DATA_FILE = "C:\\Users\\USUARIO\\source\\repos\\MusicApp\\MusicApp\\Data";
+        private const string DATA_FILE = "C:\\Users\\USUARIO\\source\\repos\\MusicApp\\MusicApp\\Data\\Album.json\\";
 
         public static Album AddAlbum(Album album)
         {
@@ -27,7 +27,6 @@ namespace MusicApp.Data
             Console.WriteLine(album.Description);
             Console.WriteLine(album.ReleasedDate);
             Console.WriteLine(album.TrackTitle);
-            Console.WriteLine(album.);
         }  
         public static void UpdateAlbum(Album album)
         {

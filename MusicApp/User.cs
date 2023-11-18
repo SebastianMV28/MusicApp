@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 
 namespace MusicApp
@@ -28,18 +29,28 @@ namespace MusicApp
 
         public UserType Type { get => _type; set => _type = value; }
 
+        public User(JObject valueObject)
+        {
+            Name = (string)valueObject["Name"];
+            Email = (string)valueObject["email"];
+            Password = (string)valueObject["password"];
+            Id = (string)valueObject["id"];
+        }
+
         public User(string name, string email, string password, string telephoneNumber, UserType type) : base(name, email, password, telephoneNumber)
 
         {
-            type = _type;
+            _type = type;
 
         }
 
-        public User(Artist favoriteArtist, Album favoriteAlbum, MusicGenre favoriteMusicGenre) 
+        public User(Artist favoriteArtist, Album favoriteAlbum, MusicGenre favoriteMusicGenre, UserType type) 
         {
+             _type = type;
             _favoriteAlbum = favoriteAlbum;
             _favoriteArtist = favoriteArtist;
             _favoriteMusicGenre = favoriteMusicGenre;
+
         }
 
         public User(UserEntity email, UserEntity password)
