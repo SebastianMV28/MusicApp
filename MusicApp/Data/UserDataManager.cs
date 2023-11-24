@@ -8,6 +8,13 @@ namespace MusicApp.Data
 {
     public static class UserDataManager
     {
+
+        private const string  DATA_FILE = "C:\\Users\\USUARIO\\source\\repos\\MusicApp\\MusicApp\\Data";
+
+        public static string GetInfoFile() {
+            return DATA_FILE; 
+        }
         public static void SaveUser(User user) => Console.WriteLine(user);
+
     }
 }
