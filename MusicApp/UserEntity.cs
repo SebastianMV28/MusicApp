@@ -24,5 +24,6 @@ namespace MusicApp
             _name = name;
                
         }
+        public UserEntity() { }
     }
 }

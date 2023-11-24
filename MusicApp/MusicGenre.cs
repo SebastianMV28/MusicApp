@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MusicApp
 {
-    internal class MusicGenre
+    public class MusicGenre
     {
         private int _id;
         private Artist _relatedArtist;

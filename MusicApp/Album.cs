@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MusicApp
 {
-    internal class Album
+    public class Album
     {
         private string  _title, _description;
         private Artist _artist;
@@ -22,7 +22,6 @@ namespace MusicApp
         public Track TrackTitle { get { return _trackTitle; } set { _trackTitle = value; } }
 
         public MusicGenre MusicGenreSelection { get { return _musicGenre; } set { _musicGenre = value; } }
-
 
         public Album( string title, Artist artist, Track trackTitle, Track numberOfTrack, DateTime releasedDate )
         {

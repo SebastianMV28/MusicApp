@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace MusicApp
 {
-    internal class Artist:UserEntity
+    public class Artist:UserEntity
     {
         private int _id;
         private string _artistName, _country, _subGenre;
         private MusicGenre _musicGenre;
         private Album _album;
+        private UserType _type;
         public int Id { get { return _id; } set { _id = value; }}
         public string ArtistName { get { return _artistName; } set { _artistName = value; } }
 

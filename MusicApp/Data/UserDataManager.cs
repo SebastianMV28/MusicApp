@@ -1,8 +1,11 @@
-﻿using System;
+﻿using MusicApp.Utils;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace MusicApp.Data
 {
@@ -14,7 +17,26 @@ namespace MusicApp.Data
         public static string GetInfoFile() {
             return DATA_FILE; 
         }
-        public static void SaveUser(User user) => Console.WriteLine(user);
+
+        public static User SaveUser(User user)
+        {
+            try
+            {
+                string currentUserState = FileUtils.GetInfoFile(DATA_FILE);
+                var jObject = JObject.Parse(currentUserState);
+                string userJson = JsonConverter.SerializeObject(user);
+
+                jObject[$"{user.Id}"] = userJson;
+
+                string outputJson = JsonConvert.SerializeObject(jObject, Formatting.Indented);
+                return user;
+
+                
+
+
+            }
+        }
+
 
     }
 }

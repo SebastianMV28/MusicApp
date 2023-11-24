@@ -8,6 +8,7 @@ namespace MusicApp.Data
 {
     internal class AlbumDataManager
     {
+        private const string DATA_FILE = "C:\\Users\\USUARIO\\source\\repos\\MusicApp\\MusicApp\\Data\\Album.json\\";
 
             }
             catch (IndexOutOfRangeException ex) {
@@ -25,7 +26,6 @@ namespace MusicApp.Data
             Console.WriteLine(album.Description);
             Console.WriteLine(album.ReleasedDate);
             Console.WriteLine(album.TrackTitle);
-            Console.WriteLine(album.);
         }  
         public static void UpdateAlbum(Album album)
         {

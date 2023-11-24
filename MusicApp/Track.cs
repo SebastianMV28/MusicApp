@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MusicApp
 {
-    internal class Track
+    public class Track
     {
         private int _id;
         private string _title;
