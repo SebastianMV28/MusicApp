@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading.Tasks;   
 
 namespace MusicApp
 {
@@ -23,7 +24,15 @@ namespace MusicApp
 
         internal Album Album { get => _album; set => _album = value; }
 
+        public Artist(JObject valueObject)
+        {
+            Id = (string)valueObject["id"];
+        }
 
+        public Artist(string artistName)
+        {
+            _artistName = artistName;
+        }
         public Artist(string artistName, MusicGenre musicGenre, string subGenre, string country)
         {
             _artistName = artistName;

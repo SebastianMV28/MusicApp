@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ namespace MusicApp
 {
     public class Album
     {
+        private string _id;
         private string  _title, _description;
         private Artist _artist;
         private Track _trackTitle;
@@ -22,6 +24,24 @@ namespace MusicApp
         public Track TrackTitle { get { return _trackTitle; } set { _trackTitle = value; } }
 
         public MusicGenre MusicGenreSelection { get { return _musicGenre; } set { _musicGenre = value; } }
+
+        public string Id { get => _id; set => _id = value; }
+
+        public Album(JObject valueObject)
+        {
+            var album = valueObject["Album"].ToObject<JObject>();
+
+            Id = (string)valueObject["Id"];
+            Title = (string)valueObject["Title"];
+            Description = (string)valueObject["Description"];
+            Artist = new Artist(artist);
+            NumberOfTrack = (Track)valueObject["Number Of Track"];
+            ReleasedDate = (DateTime)valueObject["Released Data"];
+
+            
+        }
+
+
 
         public Album( string title, Artist artist, Track trackTitle, Track numberOfTrack, DateTime releasedDate )
         {

@@ -54,9 +54,7 @@ namespace MusicApp
             Cumbia=29,
             Tropical=30,
             Salsa=31,
-
-
-
+            Other=32
         }
         
         public MusicGenre (string genreName,  string subGenreName)

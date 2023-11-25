@@ -13,7 +13,7 @@ namespace MusicApp.Utils
             return File.ReadAllText(dataFile);
         }
 
-        public static void WriteFile(string dataFile, string json)
+        public static void WriteInfoFile(string dataFile, string json)
         {
             File.WriteAllText(dataFile, json);
         }
