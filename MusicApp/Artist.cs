@@ -3,47 +3,54 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;   
+using System.Threading.Tasks;
 
 namespace MusicApp
 {
-    public class Artist:UserEntity
+    public class Artist : UserEntity
     {
         private int _id;
-        private string _artistName, _country, _subGenre;
+        private string _artistName, _country;
         private MusicGenre _musicGenre;
         private Album _album;
         private UserType _type;
-        public int Id { get { return _id; } set { _id = value; }}
+        public int Id { get { return _id; } set { _id = value; } }
         public string ArtistName { get { return _artistName; } set { _artistName = value; } }
-
         public MusicGenre MusicGenre { get { return _musicGenre; } set { _musicGenre = value; } }
-
         public string Country { get { return _country; } set { _country = value; } }
-        public string subGenre { get { return _subGenre; } set { _subGenre = value; } }
+
 
         internal Album Album { get => _album; set => _album = value; }
 
         public Artist(JObject valueObject)
         {
-            Id = (string)valueObject["id"];
+            var artist = valueObject["Artist"].ToObject<JObject>();
+            var jObjectAlbum = valueObject["Album"].ToObject<JObject>();
+            var albumObject = new Album(jObjectAlbum);
+            var jObjectMusicGenre = valueObject["MusicGenre"].ToObject<JObject>();
+            var musicGenreObject= new MusicGenre(jObjectMusicGenre);
+            Id = (int)valueObject["id"];
+            ArtistName = (string)valueObject["Name"];
+            Country = (string)valueObject["Country"];
+            MusicGenre = musicGenreObject;
+            Album = albumObject;
         }
 
         public Artist(string artistName)
         {
             _artistName = artistName;
         }
-        public Artist(string artistName, MusicGenre musicGenre, string subGenre, string country)
+        public Artist(string artistName, MusicGenre musicGenre, string country)
         {
             _artistName = artistName;
             _musicGenre = musicGenre;
-            _subGenre = subGenre;
+
             _country = country;
 
         }
 
-        public Artist(string name, string email, string password, string telephoneNumber, UserType type) : base(name, email, password, telephoneNumber) 
-        { 
+        public Artist(string name, string email, string password, string telephoneNumber, UserType type) : base(name, email, password, telephoneNumber)
+        {
             type = _type;
         }
     }
