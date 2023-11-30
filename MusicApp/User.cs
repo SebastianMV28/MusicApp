@@ -12,20 +12,13 @@ namespace MusicApp
 {
     public class User: UserEntity
     {
-        //public UserEntity _id;
-        //public UserEntity _name;
-        //public UserEntity _email;
-        //public UserEntity _password;
-        //public UserEntity _telephone;
+        
         private Playlist _playlist;
         private Artist _favoriteArtist;
         private Album _favoriteAlbum;
         private MusicGenre _favoriteMusicGenre;
         private UserType _type;
-        //public UserEntity Id { get=> _id  ; set=> _id= value; }
-        //public UserEntity Name { get=> _name ; set=> _name= value; }
-        //public UserEntity Email { get => _email; set=> _email= value; }
-        //public UserEntity Telephone { get=> _telephone; set=> _telephone= value; }
+        
         public MusicGenre FavoriteMusicGender { get { return _favoriteMusicGenre; } set { _favoriteMusicGenre = value; } }
         public Playlist Playlist { get { return _playlist; } set { _playlist = value; } }
         public Artist FavoriteArtist { get { return _favoriteArtist; } set { _favoriteArtist= value; } }
@@ -40,11 +33,7 @@ namespace MusicApp
             TelephoneNumber= (string)valueObject["Telephone"].ToObject<JObject>();
             Email= (string)valueObject["email"].ToObject<JObject>();
             Password = (string)valueObject["password"].ToObject<JObject>();
-            //var idObject = new UserEntity(jObjectId);
-            //var nameObject= new UserEntity(jObjectUserName);
-            //var emailObject= new UserEntity(jObjectEmail);
-            
-            
+          
         }
 
         public User(int id,string name, string email, string password, string telephoneNumber, UserType type) : base(id,name, email, password, telephoneNumber)

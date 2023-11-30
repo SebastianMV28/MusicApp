@@ -50,5 +50,10 @@ namespace MusicApp
         {
             _type = type;
         }
+
+        public Artist(string email, string password) : base(email, password)
+        {
+
+        }
     }
 }

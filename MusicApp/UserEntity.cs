@@ -37,5 +37,20 @@ namespace MusicApp
             _password = password;
         }
         public UserEntity() { }
+
+        //------------------------------------------
+        public bool SingAccess()
+        {
+            bool valid= true;
+            if (string.IsNullOrWhiteSpace(_email) || string.IsNullOrWhiteSpace(_password) ){
+                valid = false;
+            }
+            else
+            {
+                valid = true;
+            }
+            return true;
+        }
+
     }
 }
