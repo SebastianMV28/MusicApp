@@ -9,13 +9,13 @@ namespace MusicApp
 {
     public class Album
     {
-        private int _id;
+        private string _id;
         private string _title;
         private Artist _artist;
         private Track _trackTitle;
         private DateTime _releasedDate;
         private MusicGenre _musicGenre;
-        public int Id { get { return _id; } set { _id = value; } }
+        public string Id { get { return _id; } set { _id = value; } }
         public Artist Artist { get { return _artist; } set { _artist = value; } }
         public string Title { get { return _title; } set { _title = value; } }
         public DateTime ReleasedDate { get { return _releasedDate; } set { _releasedDate = value; } }
@@ -31,7 +31,7 @@ namespace MusicApp
             var artistObject = new Artist(jObjectArtist);
             var trackObject = new Track(jObjectTrack);
             var musicGenreObject = new MusicGenre(JObjectMusicGenre);
-            Id = (int)valueObject["Id"];
+            Id = (string)valueObject["Id"];
             Title = (string)valueObject["Title"];
             Artist = artistObject;
             TrackTitle = trackObject;

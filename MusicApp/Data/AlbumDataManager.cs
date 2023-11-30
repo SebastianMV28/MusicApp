@@ -15,6 +15,7 @@ namespace MusicApp.Data
     public class AlbumDataManager
     {
         private const string DATA_FILE = "C:\\Users\\USUARIO\\source\\repos\\MusicApp\\MusicApp\\Data\\Album.json\\";
+        
         public static Album AddAlbum(Album album)
         {
 
@@ -37,69 +38,63 @@ namespace MusicApp.Data
 
             return album;
         }
-    }
-    public static Album GetAlbumById(string id)
-    {
-
-        try
+        public static Album GetAlbumById(string id)
         {
-            string currentAlbumState = FileUtils.GetInfoFile(DATA_FILE);
-            var jObject = JObject.Parse(currentAlbumState);
-            var albumJsonStrg = (string)jObject[id];
-            var valueObject = JObject.Parse(albumJsonStrg);
 
-            return new Album(valueObject);
+            try
+            {
+                string currentAlbumState = FileUtils.GetInfoFile(DATA_FILE);
+                var jObject = JObject.Parse(currentAlbumState);
+                var albumJsonStrg = (string)jObject[id];
+                var valueObject = JObject.Parse(albumJsonStrg);
+
+                return new Album(valueObject);
+
+            }
+            catch (Exception ex)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(ex.Message);
+                Console.ForegroundColor = ConsoleColor.White;
+                return null;
+            }
 
         }
-        catch (Exception ex)
+
+
+        public static void SaveAlbum(Album album)
         {
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine(ex.Message);
-            Console.ForegroundColor = ConsoleColor.White;
-            return null;
+            Console.WriteLine(album.Title);
+            Console.WriteLine(album.Artist);
+            
+            Console.WriteLine(album.ReleasedDate);
+            Console.WriteLine(album.TrackTitle);
+        }
+        public static void UpdateAlbum(Album album)
+        {
+            Console.WriteLine(album.Title);
+            Console.WriteLine(album.Artist);
+            
+            Console.WriteLine(album.ReleasedDate);
+            Console.WriteLine(album.TrackTitle);
         }
 
-    }
+        public static void SaveAlbumTracks(Track track)
+        {
+            Console.WriteLine(track.Title);
+            
+            Console.WriteLine(track.Duration);
+            Console.WriteLine(track.Id);
+        }
+        public static void UpdateAlbumTracks(Track track)
+        {
+            Console.WriteLine(track.Title);
+            
+            Console.WriteLine(track.Duration);
+            Console.WriteLine(track.Id);
+        }
 
-
-
-
-
-    public static void SaveAlbum(Album album)
-    {
-        Console.WriteLine(album.Title);
-        Console.WriteLine(album.Artist);
-        Console.WriteLine(album.Description);
-        Console.WriteLine(album.ReleasedDate);
-        Console.WriteLine(album.TrackTitle);
-    }
-    public static void UpdateAlbum(Album album)
-    {
-        Console.WriteLine(album.Title);
-        Console.WriteLine(album.Artist);
-        Console.WriteLine(album.Description);
-        Console.WriteLine(album.ReleasedDate);
-        Console.WriteLine(album.TrackTitle);
-    }
-
-    public static void SaveAlbumTracks(Track track)
-    {
-        Console.WriteLine(track.Title);
-        Console.WriteLine(track.NumberOfTrack);
-        Console.WriteLine(track.Duration);
-        Console.WriteLine(track.Id);
-    }
-    public static void UpdateAlbumTracks(Track track)
-    {
-        Console.WriteLine(track.Title);
-        Console.WriteLine(track.NumberOfTrack);
-        Console.WriteLine(track.Duration);
-        Console.WriteLine(track.Id);
-    }
-
-    public static < List > GetAll()
-    {
-        return new List<Album>();
-    }
+  
+    }  
 }
-}
+

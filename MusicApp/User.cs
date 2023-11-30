@@ -28,7 +28,7 @@ namespace MusicApp
 
         public User(JObject valueObject)
         {
-            Id=  (int)valueObject["id"].ToObject<JObject>();
+            Id=  (string)valueObject["id"].ToObject<JObject>();
             Name= (string)valueObject["Name"].ToObject<JObject>();
             TelephoneNumber= (string)valueObject["Telephone"].ToObject<JObject>();
             Email= (string)valueObject["email"].ToObject<JObject>();
@@ -36,7 +36,7 @@ namespace MusicApp
           
         }
 
-        public User(int id,string name, string email, string password, string telephoneNumber, UserType type) : base(id,name, email, password, telephoneNumber)
+        public User(string id,string name, string email, string password, string telephoneNumber, UserType type) : base(id,name, email, password, telephoneNumber)
 
         {
             _type = type;

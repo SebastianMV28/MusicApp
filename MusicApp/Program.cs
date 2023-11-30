@@ -2,7 +2,39 @@
 using MusicApp;
 using Newtonsoft.Json.Linq;
 
-Console.WriteLine("► Welcome to Music Wamp• ♪♫");
+
+
+ static void MainMenu()
+{
+    Console.WriteLine("\"► Welcome to Music Wamp• ♪♫\"");  
+    
+    
+    Console.WriteLine("Select one of the options bellow");
+    Console.WriteLine("----------------------------------");
+    Console.WriteLine("1- Register ");
+    Console.WriteLine("2- Sign Up with your account");
+    Console.WriteLine("3- ");
+    Console.WriteLine("");
+    Console.WriteLine("");
+    Console.WriteLine("");
+    Console.WriteLine("");
+    Console.WriteLine(""); 
+}
+
+static void MenuRegister(string[] args)
+{
+    string opt = Console.ReadLine();
+    switch (opt)
+    {
+        case "1":
+            Console.WriteLine("Register User");
+            Console.WriteLine("Please write your");
+            
+            break;
+        case "2":
+            Console.WriteLine("Sign Up");
+    }
+}
 
 Artist artist = new Artist("Svartid");
 User user = new User("svar@gmail.com", "12345");
