@@ -21,7 +21,7 @@ namespace MusicApp.Data
                 string currentAuthorState = FileUtils.GetInfoFile(DATA_FILE);
                 var jObject = JObject.Parse(currentAuthorState);
                 artist.Id = $"{jObject.Properties().Count() + 1}";
-                string authorJson = JsonConvert.SerializeObject(author);
+                string authorJson = JsonConvert.SerializeObject(artist);
                 jObject.Add(artist.Id, authorJson);
 
                 string outputJson = JsonConvert.SerializeObject(jObject, Formatting.Indented);
