@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "MusicApp": {
+      "commandName": "Project",
+      "workingDirectory": "C:\\Users\\Usuario\\source\\repos\\SebastianMV28\\MusicApp\\MusicApp"
+    }
+  }
+}

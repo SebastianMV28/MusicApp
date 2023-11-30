@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Globalization;
@@ -11,7 +12,7 @@ namespace MusicApp
 {
     public class User: UserEntity
     {
-
+        public UserEntity _id;
         public UserEntity _name;
         public UserEntity _email;
         public UserEntity _password;
@@ -21,7 +22,10 @@ namespace MusicApp
         private Album _favoriteAlbum;
         private MusicGenre _favoriteMusicGenre;
         private UserType _type;
-        
+        public UserEntity Id { get=> _id  ; set=> _id= value; }
+        public UserEntity Name { get=> _name ; set=> _name= value; }
+        public UserEntity Email { get => _email; set=> _email= value; }
+        public UserEntity Telephone { get=> _telephone; set=> _telephone= value; }
         public MusicGenre FavoriteMusicGender { get { return _favoriteMusicGenre; } set { _favoriteMusicGenre = value; } }
         public Playlist Playlist { get { return _playlist; } set { _playlist = value; } }
         public Artist FavoriteArtist { get { return _favoriteArtist; } set { _favoriteArtist= value; } }
@@ -31,13 +35,23 @@ namespace MusicApp
 
         public User(JObject valueObject)
         {
-            Name = (string)valueObject["Name"];
-            Email = (string)valueObject["email"];
+            var jObjectId=  (int)valueObject["id"].ToObject<JObject>();
+            var jObjectUserName= valueObject["Name"].ToObject<JObject>();
+            var jObjectUserTelephone= valueObject["Telephone"].ToObject<JObject>();
+            var jObjectEmail= valueObject["email"].ToObject<JObject>();
+            var jObjectUserPassword = valueObject["password"].ToObject<JObject>();
+            var idObject = new UserEntity(jObjectId);
+            var nameObject= new UserEntity(jObjectUserName);
+            var emailObject= new UserEntity(jObjectEmail);
+            Id = idObject;
+            Name = nameObject;
+
+            Email = emailObject;
             Password = (string)valueObject["password"];
-            Id = (string)valueObject["id"];
+            
         }
 
-        public User(string name, string email, string password, string telephoneNumber, UserType type) : base(name, email, password, telephoneNumber)
+        public User(int id,string name, string email, string password, string telephoneNumber, UserType type) : base(id,name, email, password, telephoneNumber)
 
         {
             _type = type;

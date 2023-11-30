@@ -28,11 +28,13 @@ namespace MusicApp.Data
 
                 jObject[$"{user.Id}"] = userJson;
 
-                string outputJson = JsonConvert.SerializeObject(jObject, Formatting.Indented);
+                string outputJson = JsonConverter.SerializeObject(jObject, Formatting.Indented);
                 return user;
 
                 
 
+
+            }catch {
 
             }
         }

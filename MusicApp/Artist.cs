@@ -9,18 +9,18 @@ namespace MusicApp
 {
     public class Artist : UserEntity
     {
-        private int _id;
-        private string _artistName, _country;
+        //private int _id;
+        private string _country;
         private MusicGenre _musicGenre;
         private Album _album;
         private UserType _type;
-        public int Id { get { return _id; } set { _id = value; } }
-        public string ArtistName { get { return _artistName; } set { _artistName = value; } }
+        //public int Id { get { return _id; } set { _id = value; } }
+        //public string ArtistName { get { return _artistName; } set { _artistName = value; } }
         public MusicGenre MusicGenre { get { return _musicGenre; } set { _musicGenre = value; } }
         public string Country { get { return _country; } set { _country = value; } }
 
-
-        internal Album Album { get => _album; set => _album = value; }
+        public Album Album { get => _album; set => _album = value; }
+        public UserType Type { get => _type; set => _type = value; }
 
         public Artist(JObject valueObject)
         {
@@ -30,28 +30,26 @@ namespace MusicApp
             var jObjectMusicGenre = valueObject["MusicGenre"].ToObject<JObject>();
             var musicGenreObject= new MusicGenre(jObjectMusicGenre);
             Id = (int)valueObject["id"];
-            ArtistName = (string)valueObject["Name"];
+            Name = (string)valueObject["Name"];
             Country = (string)valueObject["Country"];
             MusicGenre = musicGenreObject;
             Album = albumObject;
         }
 
-        public Artist(string artistName)
+        public Artist(UserEntity _name)
         {
-            _artistName = artistName;
+            _name = name;
         }
         public Artist(string artistName, MusicGenre musicGenre, string country)
         {
             _artistName = artistName;
             _musicGenre = musicGenre;
-
             _country = country;
-
         }
 
-        public Artist(string name, string email, string password, string telephoneNumber, UserType type) : base(name, email, password, telephoneNumber)
+        public Artist(int id, string name, string email, string password, string telephoneNumber, UserType type) : base(id,name, email, password, telephoneNumber)
         {
-            type = _type;
+            _type = type;
         }
     }
 }

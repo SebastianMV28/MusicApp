@@ -18,14 +18,11 @@ namespace MusicApp
 
         public MusicGenre(JObject valueObject)
         {
-            var musicGenre = valueObject["MusicGenre"].ToObject<JObject>();
+            //var musicGenre = valueObject["MusicGenre"].ToObject<JObject>();
             Id = (int)valueObject["id"];
             Genre = (MusicType)(int)valueObject["genre"];
 
         }
-
-
-
 
         public MusicGenre(MusicType genre)
         {
@@ -34,7 +31,25 @@ namespace MusicApp
 
         }
 
+        public int ValidateGenre()
+        {
+            
+            if (_genre == null)
+               
+                
+            {
+                
+                Console.WriteLine($"{_genre} is not a valid Genre, please insert a new one");
+            }
+            else
+            {
+                Console.WriteLine($"The genre that you've select is {_genre}");
+            }
+            return 0;
+        }
     }
+
+    
     public enum MusicType
     {
         Pop = 0,
