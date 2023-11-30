@@ -23,16 +23,18 @@ namespace MusicApp
         
         public Track (JObject valueObject)
         {
-            var track = valueObject["Track"].ToObject<JObject>();
+            //var track = valueObject["Track"].ToObject<JObject>();
             var jObjectAlbum = valueObject["Album"].ToObject<JObject>();
             var jObjectArtist = valueObject["Artist"].ToObject<JObject>();
+            var jObjectDuration = (long)valueObject["Artist"].ToObject<JObject>();
             var artistObject = new Artist(jObjectArtist);
+            var durationObject = new TimeOnly(jObjectDuration);
             var albumObject= new Album(jObjectAlbum);
             Id = (int)valueObject["id"];
             Title = (string)valueObject["Title"];
             Artist= artistObject;
             Album= albumObject;
-            //Duration = (TimeOnly)(int)valueObject["Duration"];
+            Duration = durationObject;
 
         }
 

@@ -23,22 +23,24 @@ namespace MusicApp
 
         public Playlist(JObject valueObject)
         {
-            var playlist = valueObject["Playlist"].ToObject<JObject>();
-
+            //var playlist = valueObject["Playlist"].ToObject<JObject>();
+            var jObjectArtist=valueObject["Artist"].ToObject<JObject>();
+            var jObjectAlbum = valueObject["Album"].ToObject<JObject>();
+            var jObjectTrack = valueObject["Track"].ToObject<JObject>();
+            var trackObject = new Track(jObjectTrack);
+            var artistObject = new Artist(jObjectArtist);
+            var albumObject = new Album(jObjectAlbum);
             Id= (int)valueObject["id"];
             PlayListName= (string)valueObject["PlayListName"];
-            Track = new Track(track);
-            RelatedArtist= new Artist(artist);
-            Album = new Album(album);
+            Track = trackObject;
+            RelatedArtist= artistObject;
+            Album = albumObject;
 
         }
 
         public Playlist(string playListName)
         {
             _playListName = playListName;
-
-            
-
         }
 
         public Playlist(Track track, Artist relatedArtist, Album album)

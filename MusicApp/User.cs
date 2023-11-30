@@ -12,20 +12,20 @@ namespace MusicApp
 {
     public class User: UserEntity
     {
-        public UserEntity _id;
-        public UserEntity _name;
-        public UserEntity _email;
-        public UserEntity _password;
-        public UserEntity _telephone;
+        //public UserEntity _id;
+        //public UserEntity _name;
+        //public UserEntity _email;
+        //public UserEntity _password;
+        //public UserEntity _telephone;
         private Playlist _playlist;
         private Artist _favoriteArtist;
         private Album _favoriteAlbum;
         private MusicGenre _favoriteMusicGenre;
         private UserType _type;
-        public UserEntity Id { get=> _id  ; set=> _id= value; }
-        public UserEntity Name { get=> _name ; set=> _name= value; }
-        public UserEntity Email { get => _email; set=> _email= value; }
-        public UserEntity Telephone { get=> _telephone; set=> _telephone= value; }
+        //public UserEntity Id { get=> _id  ; set=> _id= value; }
+        //public UserEntity Name { get=> _name ; set=> _name= value; }
+        //public UserEntity Email { get => _email; set=> _email= value; }
+        //public UserEntity Telephone { get=> _telephone; set=> _telephone= value; }
         public MusicGenre FavoriteMusicGender { get { return _favoriteMusicGenre; } set { _favoriteMusicGenre = value; } }
         public Playlist Playlist { get { return _playlist; } set { _playlist = value; } }
         public Artist FavoriteArtist { get { return _favoriteArtist; } set { _favoriteArtist= value; } }
@@ -35,19 +35,15 @@ namespace MusicApp
 
         public User(JObject valueObject)
         {
-            var jObjectId=  (int)valueObject["id"].ToObject<JObject>();
-            var jObjectUserName= valueObject["Name"].ToObject<JObject>();
-            var jObjectUserTelephone= valueObject["Telephone"].ToObject<JObject>();
-            var jObjectEmail= valueObject["email"].ToObject<JObject>();
-            var jObjectUserPassword = valueObject["password"].ToObject<JObject>();
-            var idObject = new UserEntity(jObjectId);
-            var nameObject= new UserEntity(jObjectUserName);
-            var emailObject= new UserEntity(jObjectEmail);
-            Id = idObject;
-            Name = nameObject;
-
-            Email = emailObject;
-            Password = (string)valueObject["password"];
+            Id=  (int)valueObject["id"].ToObject<JObject>();
+            Name= (string)valueObject["Name"].ToObject<JObject>();
+            TelephoneNumber= (string)valueObject["Telephone"].ToObject<JObject>();
+            Email= (string)valueObject["email"].ToObject<JObject>();
+            Password = (string)valueObject["password"].ToObject<JObject>();
+            //var idObject = new UserEntity(jObjectId);
+            //var nameObject= new UserEntity(jObjectUserName);
+            //var emailObject= new UserEntity(jObjectEmail);
+            
             
         }
 
@@ -67,10 +63,9 @@ namespace MusicApp
 
         }
 
-        public User(UserEntity email, UserEntity password)
+        public User(string email, string password) : base(email, password) 
         {
-            _email = email;
-            _password = password;
+          
         }
 
         

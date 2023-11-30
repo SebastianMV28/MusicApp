@@ -18,7 +18,6 @@ namespace MusicApp
         //public string ArtistName { get { return _artistName; } set { _artistName = value; } }
         public MusicGenre MusicGenre { get { return _musicGenre; } set { _musicGenre = value; } }
         public string Country { get { return _country; } set { _country = value; } }
-
         public Album Album { get => _album; set => _album = value; }
         public UserType Type { get => _type; set => _type = value; }
 
@@ -36,13 +35,13 @@ namespace MusicApp
             Album = albumObject;
         }
 
-        public Artist(UserEntity _name)
+        public Artist(string name):base(name)
         {
-            _name = name;
+            
         }
-        public Artist(string artistName, MusicGenre musicGenre, string country)
+        public Artist(MusicGenre musicGenre, string country)
         {
-            _artistName = artistName;
+            
             _musicGenre = musicGenre;
             _country = country;
         }

@@ -4,7 +4,7 @@ using MusicApp;
 Console.WriteLine("► Welcome to Music Wamp• ♪♫");
 
 Artist artist = new Artist("Svartid");
-Console.WriteLine(artist.ArtistName);
+Console.WriteLine(artist.Name);
 MusicGenre musicGenre = new MusicGenre(MusicType.BlackMetal);
 
 int genre = musicGenre.ValidateGenre();

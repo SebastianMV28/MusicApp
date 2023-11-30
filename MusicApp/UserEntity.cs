@@ -20,16 +20,21 @@ namespace MusicApp
         {
             _id = id;
         }
-
+        public UserEntity(string name)
+        {
+            _name = name;
+        }
         public UserEntity(int id,string name, string email, string password, string telephoneNumber) {
             _id = id;
             _name = name;
             _telephoneNumber = telephoneNumber;
             _email = email;
+            _password = password;       
+        }
+        public UserEntity(string email, string password)
+        {
+            _email = email;
             _password = password;
-            
-            
-               
         }
         public UserEntity() { }
     }
