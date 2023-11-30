@@ -26,6 +26,7 @@ namespace MusicApp
 
         public UserType Type { get => _type; set => _type = value; }
 
+
         public User(JObject valueObject)
         {
             Id=  (string)valueObject["id"].ToObject<JObject>();
