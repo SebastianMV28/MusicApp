@@ -10,7 +10,7 @@ namespace MusicApp.Data
     {
         public static void SelectMusicGenre(MusicGenre musicGenre)
         {
-            Console.WriteLine(musicGenre.GenreName);
+            Console.WriteLine(musicGenre.Genre);
 
         }
     }

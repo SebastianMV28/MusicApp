@@ -13,12 +13,6 @@ using Newtonsoft.Json.Linq;
     Console.WriteLine("----------------------------------");
     Console.WriteLine("1- Register ");
     Console.WriteLine("2- Sign Up with your account");
-    Console.WriteLine("3- ");
-    Console.WriteLine("");
-    Console.WriteLine("");
-    Console.WriteLine("");
-    Console.WriteLine("");
-    Console.WriteLine(""); 
 }
 
 static void MenuRegister(string[] args)
@@ -28,7 +22,8 @@ static void MenuRegister(string[] args)
     {
         case "1":
             Console.WriteLine("Register User");
-            Console.WriteLine("Please write your");
+            Console.WriteLine("1");
+            
             
             break;
         case "2":

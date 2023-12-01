@@ -28,7 +28,7 @@ namespace MusicApp
             var albumObject = new Album(jObjectAlbum);
             var jObjectMusicGenre = valueObject["MusicGenre"].ToObject<JObject>();
             var musicGenreObject= new MusicGenre(jObjectMusicGenre);
-            Id = (int)valueObject["id"];
+            Id = (string)valueObject["id"];
             Name = (string)valueObject["Name"];
             Country = (string)valueObject["Country"];
             MusicGenre = musicGenreObject;
@@ -46,7 +46,7 @@ namespace MusicApp
             _country = country;
         }
 
-        public Artist(int id, string name, string email, string password, string telephoneNumber, UserType type) : base(id,name, email, password, telephoneNumber)
+        public Artist(string id, string name, string email, string password, string telephoneNumber, UserType type) : base(id,name, email, password, telephoneNumber)
         {
             _type = type;
         }

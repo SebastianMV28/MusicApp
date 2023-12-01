@@ -9,13 +9,13 @@ namespace MusicApp
 {
     public class Track
     {
-        private int _id;
+        private string _id;
         private string _title;
         private TimeOnly _duration;
         private Artist _artist;
         private Album _album;
         
-        public int Id { get => _id; set => _id = value; }
+        public string Id { get => _id; set => _id = value; }
         public string Title { get => _title; set => _title = value; }
         public TimeOnly Duration { get => _duration; set => _duration = value; }
         public Artist Artist { get => _artist; set => _artist = value; }
@@ -30,7 +30,7 @@ namespace MusicApp
             var artistObject = new Artist(jObjectArtist);
             var durationObject = new TimeOnly(jObjectDuration);
             var albumObject= new Album(jObjectAlbum);
-            Id = (int)valueObject["id"];
+            Id = (string)valueObject["id"];
             Title = (string)valueObject["Title"];
             Artist= artistObject;
             Album= albumObject;

@@ -51,8 +51,6 @@ namespace MusicApp
             return idUser;
         }    
             
-
-
         public bool SingAccess()
         {
             bool valid;
