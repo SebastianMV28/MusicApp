@@ -22,7 +22,8 @@ static void MenuRegister(string[] args)
     {
         case "1":
             Console.WriteLine("Register User");
-            Console.WriteLine("1");
+            var userEnt= new User("");
+            
             
             
             break;

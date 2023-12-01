@@ -12,6 +12,7 @@ namespace MusicApp.Data
         {
             Console.WriteLine(musicGenre.Genre);
 
+
         }
     }
 }

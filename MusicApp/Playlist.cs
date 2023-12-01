@@ -9,13 +9,13 @@ namespace MusicApp
 {
     public class Playlist
     {
-        private int _id;
+        private string _id;
         private Artist _relatedArtist;
         private string _playListName;
         private Track _track;
         private Album _album;
 
-        public int Id { get { return _id; } set { _id = value; } }
+        public string Id { get { return _id; } set { _id = value; } }
         public string PlayListName { get { return _playListName; } set { _playListName = value; } }
         public Artist RelatedArtist { get { return _relatedArtist; } set { _relatedArtist = value; } }
         public Album Album { get { return _album; } set { _album = value; } }
@@ -30,7 +30,7 @@ namespace MusicApp
             var trackObject = new Track(jObjectTrack);
             var artistObject = new Artist(jObjectArtist);
             var albumObject = new Album(jObjectAlbum);
-            Id= (int)valueObject["id"];
+            Id= (string)valueObject["id"];
             PlayListName= (string)valueObject["PlayListName"];
             Track = trackObject;
             RelatedArtist= artistObject;

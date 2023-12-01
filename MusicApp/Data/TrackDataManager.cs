@@ -95,11 +95,11 @@ namespace MusicApp.Data
                 var trackJsonStrg = (string)jObject[id];
                 var valueObject = JObject.Parse(trackJsonStrg);
 
-                return new Track()
+                return new Track(jObject)
                 {
                     Id = (string)valueObject["Id"],
                     Title = (string)valueObject["Name"],
-                    Album = (string)valueObject["Album"],
+                    Album = new Album(string)valueObject["Album"],
                     Artist= (string)valueObject["Artist"],
 
 
